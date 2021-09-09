@@ -11,7 +11,7 @@ INSERT INTO USUARIO (idTipoUsuario, email, senha)
 VALUES (1, 'admin@admin.com', 'admin'), (2, 'cliente@cliente.com', 'cliente');
 GO
 
-INSERT INTO ESTUDIOS (nomeEstudio)
+INSERT INTO ESTUDIO (nomeEstudio)
 VALUES ('Blizzard'), ('Rockstar Studios'), ('Square Enix');
 GO
 
