@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace senai.inlock.webApi.Domains
 {
-    public class Usuario
+    public class UsuarioDomain
     {
         public int idUsuario { get; set; }
 
 
-        public TipoUsuario TipoUsuario { get; set; }
+        public TipoUsuarioDomain TipoUsuario { get; set; }
 
         [Required(ErrorMessage = "Informe o e-mail")]
         public string email { get; set; }

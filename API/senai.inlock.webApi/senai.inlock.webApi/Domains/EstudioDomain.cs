@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace senai.inlock.webApi.Domains
 {
-    public class Estudio
+    public class EstudioDomain
     {
         public int idEstudio { get; set; }
 

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace senai.inlock.webApi.Domains
 {
-    public class Jogos
+    public class JogoDomain
     {
         public int idJogo { get; set; }
 
 
-        public Estudio estudio { get; set; }
+        public EstudioDomain estudio { get; set; }
 
 
         [Required(ErrorMessage = "Informe o nome do jogo")]
@@ -29,7 +29,7 @@ namespace senai.inlock.webApi.Domains
 
 
         [Required(ErrorMessage = "Informe o preço do jogo")]
-        public float valor { get; set; }
+        public double valor { get; set; }
 
     }
 }
