@@ -37,7 +37,7 @@ namespace senai.inlock.webApi.Repositories
                 jogoAtualizado.dataLancamento = jogoAntigo.dataLancamento;
             }
 
-            if (jogoAtualizado.valor != null)
+            if (jogoAtualizado.valor > 0)
             {
                 jogoAtualizado.valor = jogoAntigo.valor;
             }
