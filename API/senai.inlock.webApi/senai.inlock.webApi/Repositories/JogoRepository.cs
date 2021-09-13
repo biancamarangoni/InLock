@@ -10,7 +10,7 @@ namespace senai.inlock.webApi.Repositories
 {
     public class JogoRepository : IJogoRepository
     {
-        private string stringConexao = "Data Source=NOTE0113G5\\SQLEXPRESS; initial catalog=catalogo_tarde; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=NOTE0113G2\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user id=sa; pwd=Senai@132";
 
         public void Atualizar(JogoDomain jogoAtualizado)
         {
@@ -65,7 +65,7 @@ namespace senai.inlock.webApi.Repositories
         {
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string querySelectById = "SELECT idJogo, nomeEstudio, nomeJogo, descricao, dataLancamento, valor FROM JOGO jogo LEFT JOIN ESTUDIO estudio ON estudio.idEstudio = jogo.idEstudio WHERE idJogo = @idJogo;";
+                string querySelectById = "SELECT idJogo, nomeEstudio, nomeJogo, descricao, dataLancamento, valor FROM JOGOS jogo LEFT JOIN ESTUDIO estudio ON estudio.idEstudio = jogo.idEstudio WHERE idJogo = @idJogo;";
 
                 con.Open();
 
@@ -151,7 +151,7 @@ namespace senai.inlock.webApi.Repositories
 
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string querySelectALL = "SELECT nomeJogo 'Jogo', nomeEstudio 'Estudio' FROM JOGO jogo LEFT JOIN ESTUDIO estudio ON jogo.idEstudio = estudio.idEstudio; ";
+                string querySelectALL = "SELECT idJogo, nomeJogo, nomeEstudio FROM JOGOS jogo LEFT JOIN ESTUDIO estudio ON jogo.idEstudio = estudio.idEstudio; ";
 
                 con.Open();
 

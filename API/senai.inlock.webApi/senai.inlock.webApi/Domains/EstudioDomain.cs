@@ -11,8 +11,8 @@ namespace senai.inlock.webApi.Domains
         public int idEstudio { get; set; }
 
 
-        [Required(ErrorMessage = "Informe o nome do estudio")]
-        [StringLength(50, ErrorMessage = "O nome do estudio precisa ter no máximo 50 caracteres")]
+        //[Required(ErrorMessage = "Informe o nome do estudio")]
+        //[StringLength(50, ErrorMessage = "O nome do estudio precisa ter no máximo 50 caracteres")]
         public string nomeEstudio { get; set; }
     }
 }

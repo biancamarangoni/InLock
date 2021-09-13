@@ -25,3 +25,6 @@ C:\Users\fic\Desktop\InLock\API\senai.inlock.webApi\senai.inlock.webApi\obj\Debu
 C:\Users\fic\Desktop\InLock\API\senai.inlock.webApi\senai.inlock.webApi\obj\Debug\netcoreapp3.1\senai.inlock.webApi.dll
 C:\Users\fic\Desktop\InLock\API\senai.inlock.webApi\senai.inlock.webApi\obj\Debug\netcoreapp3.1\senai.inlock.webApi.pdb
 C:\Users\fic\Desktop\InLock\API\senai.inlock.webApi\senai.inlock.webApi\obj\Debug\netcoreapp3.1\senai.inlock.webApi.genruntimeconfig.cache
+C:\Users\fic\Desktop\InLock\API\senai.inlock.webApi\senai.inlock.webApi\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\fic\Desktop\InLock\API\senai.inlock.webApi\senai.inlock.webApi\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\fic\Desktop\InLock\API\senai.inlock.webApi\senai.inlock.webApi\bin\Debug\netcoreapp3.1\System.Text.Json.dll

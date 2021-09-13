@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PERffSsAF3ni7S8S3uVdd83jQbiCvFFOhKjnaFw60dzS7K+QBB0id5ntNBjoX93UnF/FOoib2zE/begA8QBX6w==",
+  "dgSpecHash": "3lugyhikoMPZx+LUHg89iQ2/EEV8nJbTuFh2+DlW1ZWaMlJl2hFZ7oKG8bKUBGLyu5NIoEcj2mEht0xs+A+Zlw==",
   "success": true,
   "projectFilePath": "C:\\Users\\fic\\Desktop\\InLock\\API\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi.csproj",
   "expectedPackageFiles": [
@@ -11,8 +11,11 @@
     "C:\\Users\\fic\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\fic\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\fic\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
+    "C:\\Users\\fic\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "C:\\Users\\fic\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\fic\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\fic\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\fic\\.nuget\\packages\\system.text.encodings.web\\5.0.1\\system.text.encodings.web.5.0.1.nupkg.sha512",
+    "C:\\Users\\fic\\.nuget\\packages\\system.text.json\\5.0.2\\system.text.json.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

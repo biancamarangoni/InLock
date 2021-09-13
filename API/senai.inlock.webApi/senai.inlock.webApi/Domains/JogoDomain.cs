@@ -24,7 +24,7 @@ namespace senai.inlock.webApi.Domains
 
 
         [Required(ErrorMessage = "Informe a data do lançamento")]
-        // [DataType(DataType.Date)]
+        [DataType(DataType.Date)]
         public DateTime dataLancamento { get; set; }
 
 
