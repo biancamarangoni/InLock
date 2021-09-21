@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using senai.inlock.webApi.Domains;
 using senai.inlock.webApi.Interfaces;
 using senai.inlock.webApi.Repositories;
@@ -9,33 +10,35 @@ using System.Threading.Tasks;
 
 namespace senai.inlock.webApi.Controllers
 {
-        [Produces("application/json")]
-        [Route("api/[controller]")]
-        [ApiController]
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    [ApiController]
     public class JogosController : Controller
     {
-            private IJogoRepository _JogoRepository { get; set; }
+        private IJogoRepository _JogoRepository { get; set; }
 
-            public JogosController()
-            {
-                _JogoRepository = new JogoRepository();
-            }
+        public JogosController()
+        {
+            _JogoRepository = new JogoRepository();
+        }
 
+            [Authorize]
             [HttpGet]
             public IActionResult Get()
             {
-                try
-                {
+               // try
+               // {
                     List<JogoDomain> ListaJogos = _JogoRepository.ListarTodos();
 
                     return Ok(ListaJogos);
-                }
-                catch (Exception erro)
-                {
-                    return BadRequest(erro);
-                }
+               // }
+               // catch (Exception erro)
+               // {
+               //     return BadRequest(erro);
+               // }
             }
 
+            [Authorize]
             [HttpGet("{id}")]
             public IActionResult GetById(int id)
             {
@@ -56,6 +59,7 @@ namespace senai.inlock.webApi.Controllers
                 }
             }
 
+            [Authorize(Roles = "ADMINISTRADOR")]
             [HttpPost]
             public IActionResult Post(JogoDomain NovoJogo)
             {
@@ -70,6 +74,7 @@ namespace senai.inlock.webApi.Controllers
                 }
             }
 
+            [Authorize(Roles = "ADMINISTRADOR")]
             [HttpDelete("{IdDeleta}")]
             public IActionResult Delete(int IdDeleta)
             {
@@ -84,6 +89,7 @@ namespace senai.inlock.webApi.Controllers
                 }
             }
 
+            [Authorize(Roles = "ADMINISTRADOR")]
             [HttpPut]
             public IActionResult Put(JogoDomain JogoAtualizar)
             {

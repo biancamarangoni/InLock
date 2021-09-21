@@ -10,7 +10,7 @@ namespace senai.inlock.webApi.Repositories
 {
     public class JogoRepository : IJogoRepository
     {
-        private string stringConexao = "Data Source=NOTE0113G2\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=DESKTOP-0BA1Q0M\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user id=sa; pwd=Senai@132";
 
         public void Atualizar(JogoDomain jogoAtualizado)
         {
@@ -32,7 +32,7 @@ namespace senai.inlock.webApi.Repositories
                 jogoAtualizado.descricao = jogoAntigo.descricao;
             }
 
-            if (jogoAtualizado.dataLancamento != null)
+            if (jogoAtualizado.dataLancamento.ToString() != "")
             {
                 jogoAtualizado.dataLancamento = jogoAntigo.dataLancamento;
             }
