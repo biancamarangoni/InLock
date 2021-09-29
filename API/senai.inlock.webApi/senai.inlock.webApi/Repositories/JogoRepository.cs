@@ -10,62 +10,35 @@ namespace senai.inlock.webApi.Repositories
 {
     public class JogoRepository : IJogoRepository
     {
-        private string stringConexao = "Data Source=DESKTOP-0BA1Q0M\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=NOTE0113G2\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user id=sa; pwd=Senai@132";
 
         public void Atualizar(JogoDomain jogoAtualizado)
         {
-            JogoDomain jogoAntigo = BuscarPorId(jogoAtualizado.idJogo);
-
-
-            if (jogoAtualizado.estudio.idEstudio > 0)
-            {
-                jogoAtualizado.estudio.idEstudio = jogoAntigo.estudio.idEstudio;
-            }
-
-            if (jogoAtualizado.nomeJogo != null)
-            {
-                jogoAtualizado.nomeJogo = jogoAntigo.nomeJogo;
-            }
-
-            if (jogoAtualizado.descricao != null)
-            {
-                jogoAtualizado.descricao = jogoAntigo.descricao;
-            }
-
-            if (jogoAtualizado.dataLancamento.ToString() != "")
-            {
-                jogoAtualizado.dataLancamento = jogoAntigo.dataLancamento;
-            }
-
-            if (jogoAtualizado.valor > 0)
-            {
-                jogoAtualizado.valor = jogoAntigo.valor;
-            }
-
             using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string queryUpdate = "UPDATE Jogo Set idEstudio = @novoEstudio, nomeJogo = @novoNome, descricao = @novaDescricao, dataLancamento = @novaDataL, valor = @novoValor WHERE idJogo = @ID;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
                 {
-                    string queryUpdateBody = "UPDATE JOGO SET nomeJogo = @nomeJogo WHERE idJogo = @idJogo";
+                    cmd.Parameters.AddWithValue("@novoEstudio", jogoAtualizado.estudio.idEstudio);
+                    cmd.Parameters.AddWithValue("@novoNome", jogoAtualizado.nomeJogo);
+                    cmd.Parameters.AddWithValue("@novaDescricao", jogoAtualizado.descricao);
+                    cmd.Parameters.AddWithValue("@novaDataL", jogoAtualizado.dataLancamento);
+                    cmd.Parameters.AddWithValue("@novoValor", jogoAtualizado.valor);
+                    cmd.Parameters.AddWithValue("@ID", jogoAtualizado.idJogo);
 
-                    using (SqlCommand cmd = new SqlCommand(queryUpdateBody, con))
-                    {
-                    cmd.Parameters.AddWithValue("@idJogo", jogoAtualizado.idJogo);
-                    cmd.Parameters.AddWithValue("@idEstudio", jogoAtualizado.estudio.idEstudio);
-                    cmd.Parameters.AddWithValue("@nomeJogo", jogoAtualizado.nomeJogo);
-                    cmd.Parameters.AddWithValue("@descricao", jogoAtualizado.descricao);
-                    cmd.Parameters.AddWithValue("@dataLancamento", jogoAtualizado.dataLancamento);
-                    cmd.Parameters.AddWithValue("@valor", jogoAtualizado.valor);
-                    con.Open();
-
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.ExecuteNonQuery();
                 }
+            }
         }
 
         public JogoDomain BuscarPorId(int idJogo)
         {
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string querySelectById = "SELECT idJogo, nomeEstudio, nomeJogo, descricao, dataLancamento, valor FROM JOGOS jogo LEFT JOIN ESTUDIO estudio ON estudio.idEstudio = jogo.idEstudio WHERE idJogo = @idJogo;";
+                string querySelectById = "SELECT idJogo, nomeEstudio, nomeJogo, descricao, dataLancamento, valor FROM JOGO jogo LEFT JOIN ESTUDIO estudio ON estudio.idEstudio = jogo.idEstudio WHERE idJogo = @idJogo;";
 
                 con.Open();
 
@@ -151,7 +124,7 @@ namespace senai.inlock.webApi.Repositories
 
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string querySelectALL = "SELECT idJogo, nomeJogo, nomeEstudio FROM JOGOS jogo LEFT JOIN ESTUDIO estudio ON jogo.idEstudio = estudio.idEstudio; ";
+                string querySelectALL = "SELECT idJogo, nomeJogo, nomeEstudio FROM JOGO jogo LEFT JOIN ESTUDIO estudio ON jogo.idEstudio = estudio.idEstudio; ";
 
                 con.Open();
 

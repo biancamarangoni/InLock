@@ -10,7 +10,7 @@ namespace senai.inlock.webApi.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private string stringConexao = "Data Source=DESKTOP-0BA1Q0M\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=NOTE0113G2\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user id=sa; pwd=Senai@132";
 
         public UsuarioDomain BuscarPorEmailSenha(string email, string senha)
         {
